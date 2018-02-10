@@ -1,0 +1,79 @@
+.empty{
+    margin: 40px auto;
+}
+
+.card{
+    margin: 0px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 0;
+    width:80%
+}
+
+.row{
+    margin: 5% auto;
+}
+
+body {
+    background-image: url(../images/background_guitar_chords.jpg);
+    
+}
+
+
+.main{
+    margin: 0 auto;
+    max-width:80%;
+    height:100%;
+    /* background-image: url(../images/background_guitar_chords.jpg); */
+    background-image: url(../images/guitar_sheet_music.jpg); 
+    border: solid 3px #363633
+}
+
+h1{
+    font-size: 36px;
+    color:#ffffff;
+}
+
+h3{
+    font-size: 24px;
+    color: #ffffff;
+}
+h2{
+    font-size: 24px;
+    color: #f5f0f0;
+}
+
+.navbar-nav{
+    flex-direction: row;
+}
+
+.nav-link{
+    margin:0px 5px;
+    color: #ffffff;
+
+}
+
+.navbar{
+    background-image: url(../images/header.jpg);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: solid 1px #777777;
+    height: 85px;
+}
+
+.empty{
+   
+    margin: 0px auto;
+    background-image: url(../images/header.jpg); 
+}
+
+#win_lose{
+    background-image: url(../images/header.jpg);
+}
+
+#previousResult{
+    background-image: url(../images/header.jpg);
+}
+
+
+
+
