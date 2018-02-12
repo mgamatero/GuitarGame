@@ -20,10 +20,10 @@ $(document).ready(function () {
     ]
 
 
-    //gameplay soundfiles
-    let aChord = new Audio("assets/images/achord.m4a")
-    let win3Song = new Audio("assets/images/3wins.m4a")
-    let lossSong = new Audio("assets/images/Lost.m4a")
+    //random gameplay soundfiles
+    var chordArray =["assets/images/achord.m4a","assets/images/echord.m4a","assets/images/fchord.m4a","assets/images/gchord.m4a"]
+    var winSongArray = ["assets/images/blackbird.m4a","assets/images/ribbonsinthesky.m4a","assets/images/sayyouwontletgo.m4a","assets/images/winner.m4a","assets/images/winner2.m4a"]
+    
 
     // initializetotalWins, display on screen
     var totalWins = 0
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
         // initialize goal score, display on screen
         //+100 because sometimes the goalScore is less than 100 and it messes up the random values
-        goalScore = (Math.floor(Math.random() * 200)) + 100
+        goalScore = (Math.floor(Math.random() * 100)) + 100
         $("#goalScore").html(goalScore)
 
         // set random GuitarValues - this assigns point values for attribute "points"
@@ -63,20 +63,29 @@ $(document).ready(function () {
         //update totalScore and update display
         totalScore = totalScore + parseInt($(this).attr("points"))
         $("#totalScore").html(totalScore)
-        aChord.play()
+        
+        //play random chord  
+        let chord = new Audio(chordArray[Math.floor(Math.random()*4)])
+        chord.play()
 
         //logic
         if (totalScore === goalScore) {
             totalWins++
+            //display to html
             $("#win_lose").html("You won!")
             $("#totalWins").html(totalWins)
-            win3Song.play()
+
+            //play random win song
+            let winnerSong = new Audio(winSongArray[Math.floor(Math.random()*5)])
+            winnerSong.play()
             initialize()
         }
         else if (totalScore > goalScore) {
             totalLosses++
+            //display to html
             $("#win_lose").html("You lost!")
             $("#totalLosses").html(totalLosses)
+            let lossSong = new Audio("assets/images/loser.m4a")
             lossSong.play()
             initialize()
         }
