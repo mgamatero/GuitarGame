@@ -67,11 +67,16 @@ h2{
 }
 
 #win_lose{
-    background-image: url(../images/header.jpg);
+    
+    background-color: #0d0d0e;
+   
 }
 
 #previousResult{
-    background-image: url(../images/header.jpg);
+    
+    background-color: #0d0d0e;
+    border: solid 3px rgb(191, 233, 6);
+    padding:1px;
 }
 
 

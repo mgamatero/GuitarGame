@@ -22,7 +22,9 @@ $(document).ready(function () {
         }
     ]
 
-
+let aChord = new Audio("assets/images/achord.m4A")
+let winSong = new Audio("assets/images/Win.m4A")
+let lossSong = new Audio("assets/images/Lost.m4A")
 
     // initializetotalWins, display on screen
     var totalWins = 0
@@ -51,7 +53,7 @@ $(document).ready(function () {
 
         // set random GuitarValues - this assigns point values for attribute "points"
         for (var x = 0; x < 4; x++) {
-            guitarArr[x].value = Math.floor(Math.random() * (Math.floor(goalScore / 4))) 
+            guitarArr[x].value = Math.floor(Math.random() * (Math.floor(goalScore / 4)))
             console.log(guitarArr[x].value) //debug only
             $(".guitar" + x).attr("points", guitarArr[x].value)
         }
@@ -63,19 +65,33 @@ $(document).ready(function () {
         //update totalScore and update display
         totalScore = totalScore + parseInt($(this).attr("points"))
         $("#totalScore").html(totalScore)
+        aChord.play()
 
         //logic
         if (totalScore === goalScore) {
             totalWins++
-            $("#win_lose").html("You are a Winner!")
-            $("#totalWins").html(totalWins)
-            initialize()
+            winSong.play()
+            var timeDelay = setTimeout(function () {
+                $("#win_lose").html("You are a Winner!")
+                $("#totalWins").html(totalWins)
+                
+            }, 500)
+
+            var timeReset = setTimeout(function () {
+                initialize()
+                
+            }, 750)
         }
         else if (totalScore > goalScore) {
+            lostSong.play()
             totalLosses++
-            $("#win_lose").html("You are a Loser!")
-            $("#totalLosses").html(totalLosses)
-            initialize()
+            var timeDelay = setTimeout(function () {
+                $("#win_lose").html("You are a Loser!")
+                $("#totalLosses").html(totalLosses)
+            }, 500)
+            var timeReset = setTimeout(function () {
+                initialize()
+            }, 750)
         }
 
     })
