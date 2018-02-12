@@ -1,6 +1,3 @@
-
-
-
 // JavaScript function that wraps everything
 $(document).ready(function () {
 
@@ -22,9 +19,11 @@ $(document).ready(function () {
         }
     ]
 
-let aChord = new Audio("assets/images/achord.m4A")
-let winSong = new Audio("assets/images/Win.m4A")
-let lossSong = new Audio("assets/images/Lost.m4A")
+
+    //gameplay soundfiles
+    let aChord = new Audio("assets/images/achord.m4a")
+    let win3Song = new Audio("assets/images/3wins.m4a")
+    let lossSong = new Audio("assets/images/Lost.m4a")
 
     // initializetotalWins, display on screen
     var totalWins = 0
@@ -54,7 +53,6 @@ let lossSong = new Audio("assets/images/Lost.m4A")
         // set random GuitarValues - this assigns point values for attribute "points"
         for (var x = 0; x < 4; x++) {
             guitarArr[x].value = Math.floor(Math.random() * (Math.floor(goalScore / 4)))
-            console.log(guitarArr[x].value) //debug only
             $(".guitar" + x).attr("points", guitarArr[x].value)
         }
     }
@@ -70,34 +68,19 @@ let lossSong = new Audio("assets/images/Lost.m4A")
         //logic
         if (totalScore === goalScore) {
             totalWins++
-            winSong.play()
-            var timeDelay = setTimeout(function () {
-                $("#win_lose").html("You are a Winner!")
-                $("#totalWins").html(totalWins)
-                
-            }, 500)
-
-            var timeReset = setTimeout(function () {
-                initialize()
-                
-            }, 750)
+            $("#win_lose").html("You won!")
+            $("#totalWins").html(totalWins)
+            win3Song.play()
+            initialize()
         }
         else if (totalScore > goalScore) {
-            lostSong.play()
             totalLosses++
-            var timeDelay = setTimeout(function () {
-                $("#win_lose").html("You are a Loser!")
-                $("#totalLosses").html(totalLosses)
-            }, 500)
-            var timeReset = setTimeout(function () {
-                initialize()
-            }, 750)
+            $("#win_lose").html("You lost!")
+            $("#totalLosses").html(totalLosses)
+            lossSong.play()
+            initialize()
         }
-
     })
-
-
-
 });
 
 
