@@ -10,22 +10,24 @@
 }
 
 .row{
-    margin: 5% auto;
+    margin: 3% auto;
 }
 
 body {
     background-image: url(../images/background_guitar_chords.jpg);
-    
 }
 
 
 .main{
     margin: 0 auto;
     max-width:80%;
-    height:100%;
-    /* background-image: url(../images/background_guitar_chords.jpg); */
-    background-image: url(../images/guitar_sheet_music.jpg); 
-    border: solid 3px #363633
+      
+    background-image: url("https://media.gettyimages.com/photos/guitar-strings-picture-id461261185?b=1&k=6&m=461261185&s=612x612&w=0&h=6XS1-PNGpxFUx3G5KF7-_T6Vy1ILXqPpr0Nn7FkCPqw="); 
+    border: solid 3px #363633;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h1{
@@ -53,23 +55,15 @@ h2{
 }
 
 .navbar{
-    background-image: url(../images/header.jpg);
-    padding-top: 0px;
-    padding-bottom: 0px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSktf6ak0i6FrooalTpLB9sNuWlipZxt_TWoTPBcs6wOdHPXXJLNQ");
+    
+    padding: 3%;
     border: solid 1px #777777;
-    height: 85px;
-}
-
-.empty{
-   
-    margin: 0px auto;
-    background-image: url(../images/header.jpg); 
+ 
 }
 
 #win_lose{
-    
     background-color: #0d0d0e;
-   
 }
 
 #previousResult{
@@ -77,6 +71,11 @@ h2{
     background-color: #0d0d0e;
     border: solid 3px rgb(191, 233, 6);
     padding:1px;
+}
+
+.img-thumbnail {
+    height:80%;
+    width:80%;
 }
 
 

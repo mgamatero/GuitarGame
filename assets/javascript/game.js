@@ -1,6 +1,6 @@
 // JavaScript function that wraps everything
 $(document).ready(function () {
-
+    //array to hold guitar values.  empty at this point
     var guitarArr = [
         {
             value: 0
@@ -46,8 +46,7 @@ $(document).ready(function () {
         $("#totalScore").html(totalScore)
 
         // initialize goal score, display on screen
-        //+100 because sometimes the goalScore is less than 100 and it messes up the random values
-        goalScore = (Math.floor(Math.random() * 100)) + 100
+        goalScore = (Math.floor(Math.random() * 20))+20
         $("#goalScore").html(goalScore)
 
         // set random GuitarValues - this assigns point values for attribute "points"
@@ -57,7 +56,9 @@ $(document).ready(function () {
         }
     }
 
+    //initialize values on load
     initialize()
+    
 
     $(".guitar").on("click", function () {
         //update totalScore and update display
@@ -68,11 +69,12 @@ $(document).ready(function () {
         let chord = new Audio(chordArray[Math.floor(Math.random()*4)])
         chord.play()
 
-        //logic
+        
+        //win logic
         if (totalScore === goalScore) {
             totalWins++
-            //display to html
-            $("#win_lose").html("You won!")
+            
+            // $("#win_lose").html("You won!")
             $("#totalWins").html(totalWins)
 
             //play random win song
@@ -80,10 +82,11 @@ $(document).ready(function () {
             winnerSong.play()
             initialize()
         }
+            //loss logic
         else if (totalScore > goalScore) {
             totalLosses++
-            //display to html
-            $("#win_lose").html("You lost!")
+            
+            // $("#win_lose").html("You lost!")
             $("#totalLosses").html(totalLosses)
             let lossSong = new Audio("assets/images/loser.m4a")
             lossSong.play()
