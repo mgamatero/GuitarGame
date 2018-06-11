@@ -6,8 +6,10 @@
     margin: 0px auto;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 0;
-    width:80%
-}
+    width:80%;
+    }
+
+
 
 .row{
     margin: 3% auto;
@@ -30,11 +32,7 @@ body {
     background-size: cover;
 }
 
-h1{
-    font-size: 36px;
-    color:#ffffff;
-    
-}
+
 
 h3{
     font-size: 24px;
@@ -42,9 +40,15 @@ h3{
     
 }
 
+#Title{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 200%;
+    color:#cec1c1;
+}
+
 h5{
     font-size: 12px;
-    color: #ffffff;
+    color: #ffffff59;
     
 }
 
@@ -64,10 +68,16 @@ h2{
 }
 
 .navbar{
-    background-image: url("http://www.harmonymusicals.com/assets/images/acoustic.jpg");
     
-    padding: 3%;
-    border: solid 1px #777777;
+    background-image: url("https://media.gettyimages.com/photos/guitar-strings-picture-id461261185?b=1&k=6&m=461261185&s=612x612&w=0&h=6XS1-PNGpxFUx3G5KF7-_T6Vy1ILXqPpr0Nn7FkCPqw=");
+    
+    
+    border: solid 3px #363633;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding:2%;
  
 }
 
@@ -85,6 +95,10 @@ h2{
 .img-thumbnail {
     height:80%;
     width:80%;
+}
+
+.guitar:hover {
+    transform: skew(-5deg);
 }
 
 
