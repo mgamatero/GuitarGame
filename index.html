@@ -7,13 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Guitar Game</title>
 
+
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- <Google Font -->
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
 </head>
 
 <body>
@@ -22,7 +24,7 @@
     <nav class="navbar navbar-default bg-inverse">
         <div class="container">
             <div class="navbar-header">
-                <h4 id ="Title">The Guitar Game - Click a guitar to play</h4>
+                <h4 id="Title">The Guitar Game - Click a guitar to play</h4>
                 <br>
                 <h5> - Each guitar is assigned a random value per round.</h5>
                 <h5> - Clicking on guitar adds the values.</h5>
@@ -33,6 +35,8 @@
     <!--end navbar-->
     <br>
     <br>
+  
+
     <main class="container-fluid main">
         
         <div class="row scoreboard">
@@ -65,39 +69,42 @@
             </div>
         </div>
         <div class="row text-center">
-            
-            <div class="col-3 justify-content-center">
+
+            <div class="col-xs-6 col-3 justify-content-center">
                 <div class="guitar guitar0" id="firstGuitar">
                     <img src="assets/images/baby_taylor.jpg" alt="Responsive image" class="img-thumbnail">
                 </div>
             </div>
-            <div class="col-3 text-center">
+            <div class="col-xs-6 col-3 text-center">
                 <div class="guitar guitar1" id="secondGuitar">
                     <img src="assets/images/guild_m20.jpg" alt="Responsive image" class="img-thumbnail">
                 </div>
             </div>
-            <div class="col-3 text-center">
+            <div class="col-xs-6 col-3 text-center">
                 <div class="guitar guitar2" id="thirdGuitar">
                     <img src="assets/images/martin_00015m.jpg" alt="Responsive image" class="img-thumbnail">
                 </div>
             </div>
-            <div class="col-3 text-center">
+            <div class="col-xs-6 col-3  text-center">
                 <div class="guitar guitar3" id="fourthGuitar">
                     <img src="assets/images/takamine_nex.jpg" alt="Responsive image" class="img-thumbnail">
                 </div>
             </div>
-            
         </div>
+        
     </main>
 
 
 
     <!-- jQuery first, then Popper.js -->
-    
+
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/ulg/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
         crossorigin="anonymous "></script>
-        <script type="text/javascript" src="assets/javascript/rumble/jquery.jrumble.1.3.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/rumble/jquery.jrumble.1.3.min.js"></script>
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>

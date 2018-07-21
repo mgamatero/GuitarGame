@@ -1,6 +1,3 @@
-/* .empty{
-    margin: 10px auto;
-} */
 
 .card{
     margin: 0px auto;
@@ -96,13 +93,14 @@ h2{
 }
 
 .guitar:hover {
-    transform: skew(-5deg);
-}
+    transform: scale(1.1);
+   }
 
 
 @media only screen 
 and (min-device-width : 375px) 
 and (max-device-width : 667px) 
+and (-webkit-min-device-pixel-ratio: 2)
 and (orientation : landscape) {
     h3{
         font-size: 24px;
@@ -149,8 +147,9 @@ and (orientation : landscape) {
 @media only screen 
 and (min-device-width : 375px) 
 and (max-device-width : 667px) 
+and (-webkit-min-device-pixel-ratio: 2)
 and (orientation : portrait) { 
-    
+   
     h3{
         font-size: 24px;
         color: #ffffff;
@@ -175,7 +174,8 @@ and (orientation : portrait) {
     }
     
 .card{
-    width:30%;
+    width:100%;
+    
     }
 
     .card-body{

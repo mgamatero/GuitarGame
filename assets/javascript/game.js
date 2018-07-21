@@ -75,12 +75,14 @@ $(document).ready(function () {
         if (totalScore === goalScore) {
             totalWins++
 
-            // $("#win_lose").html("You won!")
+            
             $("#totalWins").html(totalWins)
 
             //play random win song
-            let winnerSong = new Audio(winSongArray[Math.floor(Math.random() * 5)])
+            var randomSong = winSongArray[Math.floor(Math.random() * 5)]
+            let winnerSong = new Audio(randomSong)
             winnerSong.play()
+            alert("Winner - "+randomSong.slice(14))
             initialize()
         }
         //loss logic
