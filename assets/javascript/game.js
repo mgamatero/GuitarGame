@@ -21,9 +21,9 @@ $(document).ready(function () {
 
 
     //random gameplay soundfiles
-    var chordArray =["assets/images/achord.m4a","assets/images/echord.m4a","assets/images/fchord.m4a","assets/images/gchord.m4a"]
-    var winSongArray = ["assets/images/blackbird.m4a","assets/images/ribbonsinthesky.m4a","assets/images/sayyouwontletgo.m4a","assets/images/winner.m4a","assets/images/winner2.m4a"]
-    
+    var chordArray = ["assets/images/achord.m4a", "assets/images/echord.m4a", "assets/images/fchord.m4a", "assets/images/gchord.m4a"]
+    var winSongArray = ["assets/images/blackbird.m4a", "assets/images/ribbonsinthesky.m4a", "assets/images/sayyouwontletgo.m4a", "assets/images/winner.m4a", "assets/images/winner2.m4a"]
+
 
     // initializetotalWins, display on screen
     var totalWins = 0
@@ -46,7 +46,7 @@ $(document).ready(function () {
         $("#totalScore").html(totalScore)
 
         // initialize goal score, display on screen
-        goalScore = (Math.floor(Math.random() * 20))+20
+        goalScore = (Math.floor(Math.random() * 20)) + 20
         $("#goalScore").html(goalScore)
 
         // set random GuitarValues - this assigns point values for attribute "points"
@@ -58,35 +58,42 @@ $(document).ready(function () {
 
     //initialize values on load
     initialize()
-    
+
 
     $(".guitar").on("click", function () {
         //update totalScore and update display
         totalScore = totalScore + parseInt($(this).attr("points"))
         $("#totalScore").html(totalScore)
-        
+
+
         //play random chord  
-        let chord = new Audio(chordArray[Math.floor(Math.random()*4)])
+        let chord = new Audio(chordArray[Math.floor(Math.random() * 4)])
         chord.play()
 
-        
+
         //win logic
         if (totalScore === goalScore) {
             totalWins++
-            
+
             // $("#win_lose").html("You won!")
             $("#totalWins").html(totalWins)
 
             //play random win song
-            let winnerSong = new Audio(winSongArray[Math.floor(Math.random()*5)])
+            let winnerSong = new Audio(winSongArray[Math.floor(Math.random() * 5)])
             winnerSong.play()
             initialize()
         }
-            //loss logic
+        //loss logic
         else if (totalScore > goalScore) {
             totalLosses++
-            
-            // $("#win_lose").html("You lost!")
+
+            //jquery animation to shake guitar images
+            $(".guitar").jrumble()
+            $(".guitar").trigger('startRumble')
+            setInterval(function () {
+                $(".guitar").trigger('stopRumble')
+            },1000)
+
             $("#totalLosses").html(totalLosses)
             let lossSong = new Audio("assets/images/loser.m4a")
             lossSong.play()
